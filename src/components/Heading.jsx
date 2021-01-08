@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
 import logo from '../images/logo-bold.png';
-import video1 from '../images/backgroundVideo.mp4';
-import video2 from '../images/backgroundVideo.webm';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -47,14 +45,6 @@ const Heading = () => {
       </nav>
 
       <header className='heading__header'>
-        <div className='heading__header-videoBox'>
-          <video autoPlay muted loop className='heading__header-videoBox--video'>
-            <source src={video1}></source>
-            <source src={video2}></source>
-            Your browser doesn't support!
-          </video>
-        </div>
-
         <h1 className='heading__title heading__title-1'>Alam Agung Store</h1>
         <a href='#produk' className='cta heading__cta'>View Our Products</a>
       </header>
