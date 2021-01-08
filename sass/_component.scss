@@ -1,0 +1,319 @@
+.heading {
+
+  &__nav {
+    background-color: $color-grey-light-2;
+    font-family: $font-display;
+    padding: .8rem 2.5rem;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    width: 100%;
+    box-shadow: 0 .2rem .6rem $color-grey-dark-2;
+
+    &-box {
+      display: grid;
+      grid-template-columns: 1fr min-content;
+
+      &--logo {
+        display: grid;
+        grid-template-columns: min-content max-content;
+        justify-items: center;
+        align-items: center;
+        grid-gap: 1rem;
+      }
+
+      &--menu {
+        list-style: none;
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: max-content;
+        justify-items: center;
+        align-items: center;
+
+        @media only screen and (max-width: $bp-mobile) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__header {
+    position: relative;
+    overflow: hidden;
+
+    &-videoBox {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+
+      @media only screen and (max-width: $bp-mobile) {
+        width: 195%;
+      }
+
+      &--video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__logo {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  &__logoName {
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: #154f84;
+    font-weight: 500;
+    letter-spacing: .2rem;
+  }
+
+  &__nav-item {
+    cursor: pointer;
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
+    transition: .1s ease;
+
+    &:hover .heading__nav-link {
+      text-shadow: 0 0 1px $color-primary-dark;
+
+      @media only screen and (max-width: $bp-tablet), (hover:none) {
+        text-shadow: none;
+      }
+    }
+
+    &:active .heading__nav-link {
+      @media only screen and (max-width: $bp-tablet), (hover:none) {
+        color: $color-primary;
+      }
+    }
+
+    &:not(:last-child) {
+      padding: 0 2.5rem;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 1.2px;
+        height: 100%;
+        background-color: $color-primary-dark;
+      }
+    }
+
+    &:last-child {
+      padding-left: 2.5rem;
+    }
+  }
+
+  &__nav-link,
+  &__nav-link:visited {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: $color-primary-dark;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: .2s ease, .1s ease color;
+  }
+
+  &__cta {
+    justify-self: center;
+    z-index: 2;
+
+    @media only screen and (max-width: $bp-mobile) {
+      justify-self: start;
+    }
+  }
+
+  .sidebar,
+  .dropdown {
+    display: none;
+  }
+
+  @media only screen and (max-width: $bp-mobile) {
+    .sidebar {
+      display: inline-block;
+      align-self: center;
+
+      &__btn {
+        width: 3.5rem;
+        height: 3.5rem;
+        color: $color-primary-dark;
+      }
+    }
+
+    .dropdown {
+      margin: 1.5rem 0;
+      grid-column: 1/-1;
+      display: none;
+
+      &__nav {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(3, max-content);
+        justify-content: center;
+        grid-gap: 5rem;
+      }
+
+      &__link,
+      &__link:visited {
+        text-decoration: none;
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: $color-primary-dark;
+        background-color: rgba($color-grey-dark-2, .1);
+        border-left: 2px solid $color-primary-dark;
+        padding: .5rem;
+        text-align: center;
+        -webkit-tap-highlight-color: transparent;
+        transition: .1s ease;
+
+        &:active {
+          color: $color-primary;
+          border-left: 1.5px solid $color-primary;
+        }
+      }
+    }
+
+    .clicked {
+      display: inline-block;
+    }
+  }
+
+}
+
+.footer {
+  background-color: $color-grey-dark-1;
+  color: $color-grey-light-2;
+  padding: 6rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(43rem, 1fr));
+  grid-gap: 2.5rem;
+  grid-row-gap: 3rem;
+  align-items: center;
+
+  @media only screen and (max-width: $bp-mobile) {
+    padding: 5rem;
+  }
+
+  &__heading {
+    font-size: 2rem;
+    font-family: $font-display;
+    font-weight: 500;
+    letter-spacing: 1.4px;
+  }
+
+  &__paraph {
+    font-size: 1.4rem;
+    font-weight: 200;
+    background-color: rgba($color-grey-dark-2, .3);
+    display: grid;
+    grid-template-columns: min-content max-content;
+    justify-items: center;
+    align-items: center;
+    grid-gap: .5rem;
+    padding: .6rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .1s ease;
+
+    @media only screen and (max-width: $bp-mobile) {
+      border-radius: 4px;
+    }
+
+    &:hover {
+      background-color: rgba($color-grey-dark-2, .7);
+      transform: translateY(-.3rem);
+      box-shadow: 0 0.2rem 0.4rem rgba(#000, .7);
+
+      @media only screen and (max-width: $bp-tablet), (hover:none) {
+        background-color: rgba($color-grey-dark-2, .3);
+        box-shadow: none;
+        transform: translateY(0);
+      }
+    }
+
+    &:active {
+      transform: scale(.95) translateY(0);
+      box-shadow: 0 0.1rem 0.2rem rgba(#000, .5);
+
+      @media only screen and (max-width: $bp-tablet), (hover:none) {
+        box-shadow: none;
+        transform: scale(.90) translateY(0);
+      }
+    }
+
+    &-container {
+      display: grid;
+      grid-template-columns: repeat(2, max-content);
+      grid-gap: 1rem;
+    }
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: max-content;
+    border-left: 2px solid rgba($color-grey-dark-2, .3);
+    grid-gap: .5rem;
+    padding-left: 1rem;
+  }
+
+  &__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &__logo {
+    width: 3.5rem;
+
+    &--2 {
+      width: 8rem;
+    }
+
+    &--3 {
+      width: 4rem;
+    }
+
+    &-container {
+      display: grid;
+      grid-template-columns: repeat(3, max-content);
+      align-items: center;
+      grid-gap: .5rem;
+    }
+  }
+
+  &__copyright {
+    font-family: $font-display;
+    font-weight: 200;
+    font-size: 1.1rem;
+
+    span {
+      font-weight: 400;
+    }
+
+    .author,
+    .author:visited {
+      color: $color-grey-light-2;
+      font-weight: 400;
+      -webkit-tap-highlight-color: transparent;
+    }
+  }
+
+  &__WA,
+  &__WA:visited,
+  &__mapLink,
+  &__mapLink:visited,
+  &__email,
+  &__email:visited,
+  &__logoLink,
+  &__logoLink:visited {
+    text-decoration: none;
+    color: $color-grey-light-2;
+    -webkit-tap-highlight-color: transparent;
+  }
+}

@@ -1,0 +1,111 @@
+.heading {
+
+  &__title {
+    color: $color-grey-light-2;
+    font-family: $font-display;
+
+    &-1 {
+      font-size: 4rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .8rem;
+      justify-self: center;
+      position: relative;
+      padding: 0 1rem;
+      text-shadow: 1.4px 1.4px 2px $color-grey-dark-1;
+      z-index: 2;
+
+      @media only screen and (max-width: $bp-mobile) {
+        font-size: 4.5rem;
+      }
+
+
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 105%;
+        height: 105%;
+        position: absolute;
+        top: -1rem;
+        left: -1rem;
+        border: 1.2px solid $color-grey-light-2;
+      }
+
+      &::after {
+        content: '';
+        display: inline-block;
+        width: 105%;
+        height: 105%;
+        position: absolute;
+        bottom: -1rem;
+        right: 0rem;
+        border: 1.2px solid $color-grey-light-2;
+      }
+
+      @media only screen and (max-width: $bp-mobile) {
+        &::after,
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    &-2 {
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: $color-grey-dark-3;
+      padding-left: .5rem;
+      position: relative;
+    }
+  }
+
+  &__subtitle {
+    @include heading-3;
+    color: $color-grey-light-2;
+    font-family: $font-display;
+    font-size: 3rem;
+    text-transform: uppercase;
+    background-color: transparent;
+    text-shadow: 1.4px 1.4px 2px $color-grey-dark-1;
+  }
+}
+
+.cta,
+.cta:visited {
+  text-decoration: none;
+  background-color: $color-grey-light-2;
+  color: $color-grey-dark-1;
+  font-family: $font-display;
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: .6px;
+  padding: 1.5rem;
+  text-transform: uppercase;
+  box-shadow: .2rem .2rem .4rem $color-grey-dark-1;
+  transition: .15s ease, .1s ease transform;
+  -webkit-tap-highlight-color: transparent;
+
+  @media only screen and (max-width: $bp-mobile) {
+    padding: 1.8rem;
+    font-size: 1.6rem;
+  }
+
+  &:hover {
+    background-color: $color-grey-dark-1;
+    color: $color-grey-light-2;
+    font-weight: 500;
+
+    @media only screen and (max-width: $bp-tablet), (hover:none) {
+      background-color: $color-grey-light-2;
+      color: $color-grey-dark-1;
+    }
+  }
+
+
+  &:active {
+    transform: scale(.95);
+    @media only screen and (max-width: $bp-tablet), (hover:none) {
+      transform: scale(.90);
+    }
+  }
+}

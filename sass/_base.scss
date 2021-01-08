@@ -1,0 +1,167 @@
+// COLOR
+$color-primary: #dbe2ef;
+$color-primary-dark: #112d4e;
+
+$color-grey-dark-1: #222831;
+$color-grey-dark-2: #495464;
+$color-grey-dark-3: #bbbfca;
+
+$color-grey-light-1: #e8e8e8;
+$color-grey-light-2: #f4f4f2;
+
+
+// FONT
+$font-primary: 'Roboto', sans-serif;
+$font-display: 'Montserrat', sans-serif;
+
+//BREAKPOINTS
+$bp-tablet: 50em; //800px
+$bp-mobile: 31.25em; //500px
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; //10px
+  scroll-behavior: smooth;
+
+  @media only screen and (max-width: $bp-tablet) {
+    font-size: 56.25%; //9px
+  }
+  @media only screen and (max-width: $bp-mobile) {
+    font-size: 50%; //8px
+  }
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    font-family: $font-primary;
+    color: $color-grey-dark-1;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100vh;
+}
+
+.box-paraph {
+  padding: 2.5rem;
+  border-radius: 5px;
+  background-color: rgba($color-grey-dark-2, .3);
+}
+
+.icon {
+  width: 2rem !important;
+  height: 2rem !important;
+  color: rgba($color-grey-dark-2, .8);
+  transition: .1s ease;
+
+  &:hover {
+    color: $color-grey-light-2;
+  }
+}
+
+@mixin heading-3 {
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: $font-display;
+  letter-spacing: 1.4px;
+  color: $color-grey-dark-1;
+  position: relative;
+  padding: .8rem;
+  border-radius: 5px;
+  background-color: $color-grey-light-2;
+}
+
+
+.cta-waBox,
+.cta-waBox:visited {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 3rem;
+  right: 4rem;
+  border-radius: 50%;
+  width: 6.5rem;
+  height: 6.5rem;
+  color: $color-grey-dark-1;
+  background-color: $color-grey-light-2;
+  box-shadow: 2px 2px 3px $color-grey-dark-1;
+  -webkit-tap-highlight-color: transparent;
+  z-index: 20;
+  transition: .1s ease;
+
+  @media only screen and (max-width: $bp-mobile) {
+    right: 3rem;
+  }
+
+  &:hover {
+    box-shadow: 2px 3px 4px $color-grey-dark-1;
+    transform: translateY(-.5rem);
+
+    @media only screen and (max-width: $bp-tablet), (hover:none) {
+      box-shadow: 2px 2px 3px $color-grey-dark-1;
+      transform: translateY(0);
+    }
+  }
+
+  &:active {
+    box-shadow: 1px 1px 2px $color-grey-dark-1;
+    transform: translateY(0) scale(.95);
+
+    @media only screen and (max-width: $bp-tablet), (hover:none) {
+      transform: translateY(.5rem) scale(.95);
+    }
+  }
+
+  .cta-waButton {
+    font-size: 4.6rem;
+  }
+}
+
+// Style for Swiper Components
+#swipeSlide {
+  display: grid;
+  justify-items: center;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  --swiper-theme-color: $color-grey-dark-1;
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 6rem;
+    height: 6rem;
+    background-color: rgba($color-grey-light-2, .6);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -1;
+  }
+}
+
+.swiper-button-next {
+  right: 2.5rem !important;
+}
+
+.swiper-button-prev {
+  left: 2.5rem !important;
+}
+
+span.swiper-pagination-bullet-active {
+  background-color: $color-grey-light-1;
+}

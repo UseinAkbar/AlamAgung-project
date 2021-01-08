@@ -1,0 +1,34 @@
+.heading {
+  display: grid;
+  grid-auto-rows: 6.1rem calc(100vh - 6.1rem);
+
+  @media only screen and (max-width: $bp-mobile) {
+    grid-auto-rows: 5.8rem calc(100vh - 5.8rem);
+  }
+
+  &__header {
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: minmax(min-content, 1fr);
+    grid-auto-rows: min-content;
+    justify-items: start;
+    align-content: center;
+    grid-row-gap: 2.8rem;
+    padding: 2.5rem;
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: rgba($color-grey-dark-1, .7);
+      backdrop-filter: blur(1.4px);
+      z-index: -1;
+    }
+  }
+}
+
+.footer {
+
+}
