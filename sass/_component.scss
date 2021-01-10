@@ -201,7 +201,7 @@
     font-weight: 200;
     background-color: rgba($color-grey-dark-2, .3);
     display: grid;
-    grid-template-columns: min-content max-content;
+    grid-template-columns: min-content 1fr;
     justify-items: center;
     align-items: center;
     grid-gap: .5rem;

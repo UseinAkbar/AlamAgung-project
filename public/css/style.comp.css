@@ -288,7 +288,7 @@ span.swiper-pagination-bullet-active {
     font-weight: 200;
     background-color: rgba(73, 84, 100, 0.3);
     display: grid;
-    grid-template-columns: min-content max-content;
+    grid-template-columns: min-content 1fr;
     justify-items: center;
     align-items: center;
     grid-gap: .5rem;
@@ -523,9 +523,8 @@ span.swiper-pagination-bullet-active {
     .section__service-container--2 {
       padding: 3rem;
       display: grid;
-      grid-template-columns: max-content;
+      grid-template-columns: 1fr;
       align-items: center;
-      justify-content: center;
       color: #f4f4f2;
       backdrop-filter: blur(1.5px);
       grid-column: 1/2;
@@ -537,7 +536,6 @@ span.swiper-pagination-bullet-active {
       @media only screen and (max-width: 31.25em) {
         .section__service-container--2 {
           grid-row: 2/3;
-          justify-content: start;
           grid-gap: 1.5rem;
           backdrop-filter: blur(0); } }
       .section__service-container--2 p:nth-child(1) .section__service-icon {
@@ -659,7 +657,7 @@ span.swiper-pagination-bullet-active {
           border-top-left-radius: 20px;
           border-top-right-radius: 20px;
           z-index: 10;
-          transition: .2s ease; }
+          transition: .1s ease; }
           .section__product-type .cta-mobileBox__span {
             width: 5rem;
             height: .5rem;
@@ -669,13 +667,14 @@ span.swiper-pagination-bullet-active {
             position: absolute;
             top: -9rem;
             left: 50%;
-            transform: translate(-50%, 100%) scale(1);
+            transform: translate(-50%, 100%);
             opacity: 0;
             visibility: hidden;
             font-size: 5rem;
             font-weight: 200;
             color: #f4f4f2;
-            transition: .2s .2s ease, .1s ease visibility; }
+            z-index: -1;
+            transition: .1s .2s ease, .1s ease visibility; }
           .section__product-type .cta-mobileBox__nav {
             width: 100%;
             padding: 1rem 0;
@@ -710,15 +709,14 @@ span.swiper-pagination-bullet-active {
           left: 0;
           z-index: 9;
           opacity: 0;
-          visibility: hidden;
-          transition: .1s ease; }
+          visibility: hidden; }
         .section__product-type .translate {
           transform: translate(-50%, 0); }
         .section__product-type .fadeInBtn {
-          transform: translate(-50%, 0) scale(1);
+          transform: translate(-50%, 0);
           opacity: 1;
           visibility: visible; }
-        .section__product-type .overlay {
+        .section__product-type .overlayEffect {
           opacity: 1;
           visibility: visible; } }
     .section__product-boxImg {
@@ -807,23 +805,20 @@ span.swiper-pagination-bullet-active {
         transform: scale(0.95); }
     @media only screen and (max-width: 50em), (hover: none) {
       .section__product .cta-viewMenu {
+        background-color: rgba(0, 0, 0, 0.8);
+        color: rgba(244, 244, 242, 0.6);
+        padding: .5rem;
+        display: flex;
+        align-items: center;
+        font-size: 1.4rem;
         position: absolute;
         bottom: 0;
-        right: 0;
-        transition: .1s ease; }
-        .section__product .cta-viewMenu:active {
-          transform: scale(0.95); }
-        .section__product .cta-viewMenu__nav {
-          background-color: rgba(0, 0, 0, 0.8);
-          color: rgba(244, 244, 242, 0.6);
-          padding: .5rem;
-          display: flex;
-          align-items: center;
-          font-size: 1.2rem; }
+        right: 0; }
         .section__product .cta-viewMenu__icon {
-          width: 2rem;
-          height: 2rem;
-          margin-right: .5rem; } }
+          width: 2.5rem;
+          height: 2.5rem;
+          margin-right: .5rem;
+          fill: rgba(244, 244, 242, 0.6); } }
   .section__map {
     grid-column: full-start / full-end;
     display: grid;
@@ -1004,7 +999,8 @@ span.swiper-pagination-bullet-active {
     transition: .2s; }
     @media only screen and (max-width: 31.25em) {
       .viewBox .closeBtn {
-        margin: 1rem 3rem;
+        margin: 0 3rem;
+        font-size: 5rem;
         font-weight: 300; } }
     .viewBox .closeBtn:hover {
       text-shadow: 0 0 0.2rem #f4f4f2; }

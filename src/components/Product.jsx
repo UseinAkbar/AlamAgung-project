@@ -3,6 +3,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 import whatsapp from '../images/whatsapp.png';
+import tap from '../images/tap.svg';
 library.add(faEye, faEllipsisV);
 
 
@@ -32,7 +33,7 @@ const Product = ({nama, stand, board, lampu='-', mesin='-', kondisi, produksi, g
       return {
         translate: 'translate',
         fadeInBtn: 'fadeInBtn',
-        overlay: 'overlay'
+        overlay: 'overlayEffect'
       }
     });
     document.querySelector('.cta-waBox').style.visibility = 'hidden';
@@ -61,18 +62,19 @@ const Product = ({nama, stand, board, lampu='-', mesin='-', kondisi, produksi, g
 
   return (
     <div className='section__product-type'>
-      <div className='section__product-boxImg'>
-        <img className='section__product-img' src={img} alt='Product' title={title}></img>
+      <div className='section__product-boxImg' onClick={openImg}>
+        <img className='section__product-img' src={img} alt='Meja Gambar Arsitek' title={title}></img>
         <div className='view' onClick={openImg}><FontAwesomeIcon icon='eye' className='viewIcon' /><span>View Image</span></div>
 
-        <div className='cta-viewMenu' onClick={openImg}>
-          <span className='cta-viewMenu__nav'><FontAwesomeIcon icon='eye' className='cta-viewMenu__icon' />Lihat Foto</span>
+        <div className='cta-viewMenu'>
+          <img src={tap} className='cta-viewMenu__icon'></img>
+          <span>Lihat Foto</span>
         </div>
       </div>
 
       <div className={`viewBox ${clicked}`} onClick={closeImg}>
         <span onClick={closeImg} className='closeBtn'>&times;</span>
-        <div className='viewImgContainer'><img src={img} className='viewImg'></img></div>
+        <div className='viewImgContainer'><img src={img} className='viewImg' alt='Meja Gambar Arsitek'></img></div>
       </div>
 
       <ul className='section__product-list'>
