@@ -222,7 +222,8 @@
       &--2 {
         padding: 3rem;
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: max-content;
+        justify-content: center;
         align-items: center;
         color: $color-grey-light-2;
         backdrop-filter: blur(1.5px);
@@ -238,6 +239,7 @@
         }
 
         @media only screen and (max-width: $bp-mobile) {
+          grid-template-columns: 1fr;
           grid-row: 2/3;
           grid-gap: 1.5rem;
           backdrop-filter: blur(0);
