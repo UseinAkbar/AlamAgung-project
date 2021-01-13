@@ -44,8 +44,8 @@ const Footer = () => {
       <div className='footer__container footer__container--1'>
         <h3 className='footer__heading'>Kontak Kami</h3>
         <div className='footer__paraph-container'>
-          <a className='footer__WA footer__paraph' href={`https://wa.me/+6285287187130/?text=${message}.. Saya ingin bertanya mengenai produk-produk meja gambar arsitek dari Toko Meja Gambar Alam Agung`}><FontAwesomeIcon icon='comment-dots' className='footer__icon' /><span>+6285287187130</span></a>
-          <a className='footer__email footer__paraph' href='mailto:mejagambar75@gmail.com?subject=Meja Gambar Alam Agung'><FontAwesomeIcon icon='envelope' className='footer__icon' /><span>mejagambar75@gmail.com</span></a>
+          <a className='footer__WA footer__paraph' href={`https://wa.me/+6285287187130/?text=${message}.. Saya ingin bertanya mengenai produk-produk meja gambar arsitek dari Toko Alam Agung Arsitek`}><FontAwesomeIcon icon='comment-dots' className='footer__icon' /><span>+6285287187130</span></a>
+          <a className='footer__email footer__paraph' href='mailto:mejagambar75@gmail.com?subject=Meja Gambar Alam Agung Arsitek'><FontAwesomeIcon icon='envelope' className='footer__icon' /><span>mejagambar75@gmail.com</span></a>
         </div>
       </div>
 
@@ -62,7 +62,7 @@ const Footer = () => {
             const {src, link} = item;
             return (
               <a className='footer__logoLink' href={link} key={i+1}>
-                <img className={`footer__logo footer__logo--${i+1}`} src={src} alt='Olshop Logo'></img>
+                <img className={`footer__logo footer__logo--${i+1}`} src={src} alt='Meja Gambar Alam Agung trusted by'></img>
               </a>
             )
           })}
@@ -70,7 +70,7 @@ const Footer = () => {
       </div>
 
       <p className='footer__copyright'>© Copyright {new Date().getFullYear()} by <span>Alam Agung Store</span>. All rights reserved. Created by <a href='https://www.instagram.com/useinakbarr/' className='author'>useinakbar</a></p>
-      <a href={`https://wa.me/+6285287187130/?text=${message}.. Saya ingin bertanya mengenai produk-produk meja gambar arsitek dari Toko Meja Gambar Alam Agung`} className='cta-waBox'><FontAwesomeIcon icon={['fab', 'whatsapp']} className='cta-waButton' /></a>
+      <a href={`https://wa.me/+6285287187130/?text=${message}.. Saya ingin bertanya mengenai produk-produk meja gambar arsitek dari Toko Alam Agung Arsitek`} className='cta-waBox'><FontAwesomeIcon icon={['fab', 'whatsapp']} className='cta-waButton' /></a>
     </footer>
   )
 }

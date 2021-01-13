@@ -145,6 +145,10 @@ body {
   --swiper-theme-color: $color-grey-dark-1;
   -webkit-tap-highlight-color: transparent;
 
+  &:hover::before {
+    background-color: rgba($color-grey-light-2, .7);
+  }
+
   &::before {
     content: '';
     width: 6rem;
@@ -156,6 +160,8 @@ body {
     transform: translate(-50%, -50%);
     border-radius: 50%;
     z-index: -1;
+    transition: .2s ease;
+
   }
 }
 

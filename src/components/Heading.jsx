@@ -9,7 +9,7 @@ const Heading = () => {
   const [clicked, setClicked] = useState(false);
 
   const handleClick = () => {
-    setClicked(prevValue => {
+    setClicked( prevValue => {
       return !prevValue;
     });
   }

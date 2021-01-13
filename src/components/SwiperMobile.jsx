@@ -34,7 +34,7 @@ const SwiperMobile = () => {
       {images.map( (item, i) => {
         return (
           <SwiperSlide key={i+1} id='swipeSlide'>
-            <img className='section__gallery-img' src={item} title={`figure${i+1}`} alt={`image${i+1}`}></img>
+            <img className='section__gallery-img' src={item} title={`figure${i+1}`} alt={`Meja gambar produk ${i+1}`}></img>
           </SwiperSlide>
         )
       })}

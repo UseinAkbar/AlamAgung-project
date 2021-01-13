@@ -63,18 +63,18 @@ const Product = ({nama, stand, board, lampu='-', mesin='-', kondisi, produksi, g
   return (
     <div className='section__product-type'>
       <div className='section__product-boxImg' onClick={openImg}>
-        <img className='section__product-img' src={img} alt='Meja Gambar Arsitek' title={title}></img>
+        <img className='section__product-img' src={img} alt='Meja Gambar Arsitek Product' title={title}></img>
         <div className='view' onClick={openImg}><FontAwesomeIcon icon='eye' className='viewIcon' /><span>View Image</span></div>
 
         <div className='cta-viewMenu'>
-          <img src={tap} className='cta-viewMenu__icon'></img>
+          <img src={tap} className='cta-viewMenu__icon' alt='Meja Gambar Product Nav'></img>
           <span>Lihat Foto</span>
         </div>
       </div>
 
       <div className={`viewBox ${clicked}`} onClick={closeImg}>
         <span onClick={closeImg} className='closeBtn'>&times;</span>
-        <div className='viewImgContainer'><img src={img} className='viewImg' alt='Meja Gambar Arsitek'></img></div>
+        <div className='viewImgContainer'><img src={img} className='viewImg' alt='Meja Gambar Arsitek Product'></img></div>
       </div>
 
       <ul className='section__product-list'>

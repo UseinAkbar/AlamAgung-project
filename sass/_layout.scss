@@ -1,9 +1,9 @@
 .heading {
   display: grid;
-  grid-auto-rows: 6.1rem calc(100vh - 6.1rem);
+  grid-template-rows: 6.1rem calc(100vh - 6.1rem);
 
   @media only screen and (max-width: $bp-mobile) {
-    grid-auto-rows: 5.8rem calc(100vh - 5.8rem);
+    grid-template-rows: 6.5rem calc(100vh - 6.5rem);
   }
 
   &__header {
